@@ -16,8 +16,8 @@ export function HomePage() {
         <div className="relative z-10 mx-auto max-w-6xl w-full px-6 pb-16 md:pb-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white">
-              Kreativní studio pro
-              <span className="text-accent"> výuku umění</span>
+              Kreativní studio pro{" "}
+              <span className="text-accent">výuku umění</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
               Klaps! je vzdělávací kreativní studio zaměřené na vývoj pomůcek
@@ -31,7 +31,7 @@ export function HomePage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="lg" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
                 <Link to="/studio">O studiu</Link>
               </Button>
             </div>
