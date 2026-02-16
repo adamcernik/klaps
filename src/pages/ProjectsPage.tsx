@@ -8,6 +8,8 @@ export function ProjectsPage() {
       description:
         "Popis projektu bude doplněn. Tento prostor je připraven pro prezentaci prvního projektu studia Klaps!",
       tags: ["vzdělávání", "dějiny umění"],
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/Girl_with_a_Pearl_Earring_by_Johannes_Vermeer_1665_800x.jpg",
+      alt: "Dívka s perlovou náušnicí — Johannes Vermeer",
     },
     {
       title: "Projekt 2",
@@ -15,6 +17,8 @@ export function ProjectsPage() {
       description:
         "Další projekt ve vývoji. Prostor pro prezentaci projektu s popisem, fotografiemi a dalšími detaily.",
       tags: ["pomůcky", "výuka"],
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Great_Wave_of_Kanagawa_by_Katsushika_Hokusai_1831_800x.jpg",
+      alt: "Velká vlna u Kanagawy — Katsushika Hokusai",
     },
     {
       title: "Projekt 3",
@@ -22,6 +26,8 @@ export function ProjectsPage() {
       description:
         "Konceptuální projekt v rané fázi. Sledujte nás pro aktualizace.",
       tags: ["experiment", "laboratoř"],
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Creation_of_Adam_by_Michelangelo_Buonarroti_1511_800x.jpg",
+      alt: "Stvoření Adama — Michelangelo Buonarroti",
     },
   ];
 
@@ -49,10 +55,12 @@ export function ProjectsPage() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6">
                   {/* Image placeholder */}
-                  <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
-                    <span className="text-sm text-muted-foreground">
-                      Fotografie
-                    </span>
+                  <div className="aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Content */}

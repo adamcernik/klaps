@@ -8,18 +8,24 @@ export function ProductsPage() {
       price: "Cena bude upřesněna",
       description:
         "Popis produktu bude doplněn. Tento prostor je připraven pro prezentaci prvního produktu.",
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Birth_of_Venus_by_Sandro_Botticelli_800x.jpg",
+      alt: "Zrození Venuše — Sandro Botticelli",
     },
     {
       title: "Produkt 2",
       price: "Cena bude upřesněna",
       description:
         "Další produkt ve vývoji. Sledujte nás pro aktualizace o dostupnosti.",
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Persistence_of_Memory_by_Salvador_Dali_1931_800x.jpg",
+      alt: "Persistence paměti — Salvador Dalí",
     },
     {
       title: "Produkt 3",
       price: "Cena bude upřesněna",
       description:
         "Prostor pro další produkt studia Klaps!",
+      image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Scream_by_Edvard_Munch_1893_800x.png",
+      alt: "Výkřik — Edvard Munch",
     },
   ];
 
@@ -43,10 +49,12 @@ export function ProductsPage() {
             {products.map((product, i) => (
               <div key={i} className="group">
                 {/* Image placeholder */}
-                <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                  <span className="text-sm text-muted-foreground">
-                    Fotografie produktu
-                  </span>
+                <div className="aspect-square bg-muted rounded-lg mb-4 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.alt}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <h3 className="text-lg font-semibold">{product.title}</h3>
