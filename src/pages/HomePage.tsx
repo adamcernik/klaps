@@ -6,14 +6,20 @@ export function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-end overflow-hidden">
+        <img
+          src="https://www.artprinta.com/cdn/shop/products/A08683JGA_1400x.jpg?v=1579018774"
+          alt="Klaps! — kreativní vzdělávací studio"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="relative z-10 mx-auto max-w-6xl w-full px-6 pb-16 md:pb-24">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white">
               Kreativní studio pro
               <span className="text-accent"> výuku umění</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
               Klaps! je vzdělávací kreativní studio zaměřené na vývoj pomůcek
               pro výuku dějin umění. Otevřená laboratoř, kde projekty vznikají
               v rámci pedagogické praxe a ve spolupráci se studenty.
@@ -25,7 +31,7 @@ export function HomePage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                 <Link to="/studio">O studiu</Link>
               </Button>
             </div>
