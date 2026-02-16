@@ -1,0 +1,153 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, BookOpen, Palette, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+              Kreativní studio pro
+              <span className="text-accent"> výuku umění</span>
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              Klaps! je vzdělávací kreativní studio zaměřené na vývoj pomůcek
+              pro výuku dějin umění. Otevřená laboratoř, kde projekty vznikají
+              v rámci pedagogické praxe a ve spolupráci se studenty.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link to="/projekty">
+                  Prohlédnout projekty
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/studio">O studiu</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="border-t">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                icon: BookOpen,
+                title: "Vzdělávání",
+                description:
+                  "Pomůcky a materiály navržené přímo pro výuku dějin umění na středních školách.",
+              },
+              {
+                icon: Palette,
+                title: "Tvorba",
+                description:
+                  "Projekty vznikají v reálné pedagogické praxi pod kurátorským vedením.",
+              },
+              {
+                icon: Users,
+                title: "Spolupráce",
+                description:
+                  "Studenti se zapojují do reálné tvorby — od návrhu po finální produkt.",
+              },
+            ].map((pillar) => (
+              <div key={pillar.title}>
+                <pillar.icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured projects teaser */}
+      <section className="bg-card border-t">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Vybrané projekty
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Projekty, které prošly filtrem kvality a studio je uvádí na trh.
+              </p>
+            </div>
+            <Button asChild variant="ghost" className="hidden md:flex">
+              <Link to="/projekty">
+                Všechny projekty
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Připravujeme",
+                description: "Nové projekty se připravují — sledujte nás.",
+              },
+              {
+                title: "Připravujeme",
+                description: "Další projekty brzy představíme.",
+              },
+            ].map((project, i) => (
+              <div
+                key={i}
+                className="group relative aspect-[4/3] bg-muted rounded-lg flex items-end p-6 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <h3 className="text-lg font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-white/80">{project.description}</p>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-sm text-muted-foreground">
+                    {project.title}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 md:hidden">
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/projekty">Všechny projekty</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Chcete spolupracovat?
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+            Hledáme partnery z řad škol, galerií a kulturních institucí.
+            Ozvěte se nám.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link to="/kontakt">Napište nám</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/spoluprace">Více o spolupráci</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
