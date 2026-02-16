@@ -52,9 +52,9 @@ export function Header() {
               <span className="sr-only">Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-72">
+          <SheetContent side="right" className="w-72 px-6 pt-12 pb-8">
             <SheetTitle className="sr-only">Navigace</SheetTitle>
-            <div className="flex flex-col gap-6 pt-8">
+            <div className="flex flex-col gap-6">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
