@@ -94,27 +94,31 @@ export function HomePage() {
               {
                 title: "Připravujeme",
                 description: "Nové projekty se připravují — sledujte nás.",
+                image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/mona_liza_800x.jpg",
+                alt: "Mona Lisa — Leonardo da Vinci",
               },
               {
                 title: "Připravujeme",
                 description: "Další projekty brzy představíme.",
+                image: "https://cdn.shopify.com/s/files/1/0047/4231/6066/files/The_Starry_Night_by_Vincent_van_Gogh_1889_800x.jpg",
+                alt: "Hvězdná noc — Vincent van Gogh",
               },
             ].map((project, i) => (
               <div
                 key={i}
                 className="group relative aspect-[4/3] bg-muted rounded-lg flex items-end p-6 overflow-hidden"
               >
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                   <h3 className="text-lg font-semibold text-white">
                     {project.title}
                   </h3>
                   <p className="text-sm text-white/80">{project.description}</p>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm text-muted-foreground">
-                    {project.title}
-                  </span>
                 </div>
               </div>
             ))}
